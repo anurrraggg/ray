@@ -12,7 +12,7 @@ const VerticalSpaceCards = () => {
     <>
       <div className="flex items-center justify-center flex-col gap-8 w-full bg-black">
         {/* Why Choose Us */}
-        <div className="relative top-[140px] left-[-9px] md:left-[20px]">
+        <div className="relative top-[30px] left-[-9px] md:left-[20px]">
           <h2 className="text-[35px] md:text-6xl font-bold text-[#facc15] flex justify-center items-center gap-2 md:gap-3">
             <Star className="pt-[8px] md:pt-0 h-10 w-10 md:w-14 md:h-14" />
             Why Choose Us?
@@ -22,7 +22,7 @@ const VerticalSpaceCards = () => {
 
       <div
         ref={secondRef}
-        className="relative z-[5] top-[5px] left-[20px] md:left-[40px] w-full h-[900px] md:h-[800px] text-center overflow-hidden"
+        className="relative z-[5] w-full h-auto md:h-[800px] text-center"
       >
         <motion.svg
           className="relative hidden md:flex md:w-[1650px] md:h-[650px] h-[450px] w-[400px] left-[-300px] md:left-[180px]"
@@ -44,7 +44,7 @@ const VerticalSpaceCards = () => {
           />
         </motion.svg>
 
-        <div className="md:flex grid grid-rows-2 md:flex-row flex-col md:items-center md:justify-center md:gap-[30px] w-full max-w-[345px] md:max-w-none md:w-[1370px] h-[700px] md:absolute md:left-[50px] md:bottom-[100px] md:h-[300px] mx-auto md:mx-0">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-[30px] w-full md:w-[1370px] h-auto md:h-[300px] relative md:absolute md:left-[50px] md:bottom-[100px] mx-auto py-10 md:py-0">
 
           {/* Reusable Card Style */}
           {[
