@@ -73,20 +73,21 @@ const Products = () => {
 
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Sidebar Filters - Clean List */}
-          <aside className="w-full lg:w-64 shrink-0 space-y-8 sticky top-32 h-fit">
-            <div>
-              <div className="flex items-center gap-2 mb-6 text-slate-400">
-                <Filter size={16} /> <span className="text-xs font-bold uppercase tracking-widest">Filters</span>
+          {/* Sidebar Filters - Responsive */}
+          <aside className="w-full lg:w-64 shrink-0 lg:space-y-8 lg:sticky lg:top-32 h-fit">
+            <div className="flex lg:block items-center overflow-x-auto pb-4 lg:pb-0 gap-4 lg:gap-0 no-scrollbar">
+              <div className="flex items-center gap-2 mb-0 lg:mb-6 text-slate-400 shrink-0">
+                <Filter size={16} /> <span className="text-xs font-bold uppercase tracking-widest hidden lg:inline">Filters</span>
               </div>
 
-              <div className="space-y-1">
+              <div className="flex lg:block gap-2 space-y-0 lg:space-y-1">
                 {['All', 'Industrial IoT', 'Safety', 'Sensors', 'DIY Kits'].map(cat => (
                   <button
                     key={cat}
                     onClick={() => setCategory(cat)}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-sm transition-all duration-300 border-l-2 ${category === cat
-                      ? 'border-orange-500 text-white pl-5 bg-white/5'
-                      : 'border-transparent text-slate-500 hover:text-slate-300 hover:pl-4'
+                    className={`whitespace-nowrap px-4 py-2 lg:px-3 lg:py-2 rounded-full lg:rounded-md text-sm transition-all duration-300 border lg:border-none lg:border-l-2 ${category === cat
+                      ? 'bg-orange-500 text-black lg:text-white lg:bg-white/5 lg:border-orange-500 lg:pl-5 font-medium'
+                      : 'border-white/10 text-slate-400 lg:border-transparent lg:text-slate-500 hover:text-white lg:hover:text-slate-300 lg:hover:pl-4 bg-white/5 lg:bg-transparent'
                       }`}
                   >
                     {cat}
