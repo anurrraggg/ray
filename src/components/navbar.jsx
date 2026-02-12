@@ -136,7 +136,7 @@ const Navbar = () => {
         </ul>
 
         {/* Right - Icons & Mobile Menu */}
-        <div className="flex items-center gap-6 text-white z-50">
+        <div className="flex items-center gap-4 md:gap-6 text-white z-50">
           <motion.button 
             whileHover={{ scale: 1.1, color: "#F59E0B" }}
             className="flex items-center gap-2 transition-colors hidden sm:flex group"
@@ -182,10 +182,10 @@ const Navbar = () => {
             animate={{ opacity: 1, clipPath: "circle(150% at 100% 0%)" }}
             exit={{ opacity: 0, clipPath: "circle(0% at 100% 0%)" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed inset-0 bg-black/90 backdrop-blur-2xl z-40 flex flex-col pt-32 px-10 pointer-events-auto md:hidden"
+            className="fixed top-0 left-0 w-full h-[100dvh] bg-black/95 backdrop-blur-3xl z-40 flex flex-col pt-28 px-8 pointer-events-auto md:hidden overflow-y-auto"
           >
             <motion.ul 
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-8"
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
@@ -201,16 +201,16 @@ const Navbar = () => {
                     <motion.li 
                         key={item.name}
                         variants={{
-                            hidden: { opacity: 0, x: -50 },
+                            hidden: { opacity: 0, x: -30 },
                             visible: { opacity: 1, x: 0 }
                         }}
-                        className="border-b border-white/10 pb-4 last:border-none"
+                        className="border-b border-white/5 pb-4 last:border-none"
                     >
                     {item.type === "scroll" ? (
                         <a
                         href={`#${item.path}`}
                         onClick={(e) => handleNavigation(e, item.path)}
-                        className="text-2xl font-light hover:text-amber-500 transition-colors flex items-center justify-between group"
+                        className="text-3xl font-light hover:text-amber-500 transition-colors flex items-center justify-between group"
                         >
                         {item.name}
                         <ChevronRight className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all text-amber-500" />
@@ -219,7 +219,7 @@ const Navbar = () => {
                         <Link
                         href={item.path}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`text-2xl font-light hover:text-amber-500 transition-colors flex items-center justify-between group ${pathname === item.path ? "text-amber-500 font-normal" : "text-white"}`}
+                        className={`text-3xl font-light hover:text-amber-500 transition-colors flex items-center justify-between group ${pathname === item.path ? "text-amber-500 font-normal" : "text-white"}`}
                         >
                         {item.name}
                          <ChevronRight className={`opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all text-amber-500 ${pathname === item.path ? "opacity-100 translate-x-0" : ""}`} />
@@ -230,13 +230,13 @@ const Navbar = () => {
             </motion.ul>
             
             <motion.div 
-                className="mt-auto mb-10 border-t border-white/10 pt-6"
+                className="mt-auto mb-10 border-t border-white/10 pt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
             >
-                <p className="text-gray-500 text-sm mb-4">Connect with us</p>
-                <div className="flex gap-6 text-gray-300">
+                <p className="text-zinc-500 text-sm mb-6 uppercase tracking-widest">Connect with us</p>
+                <div className="flex gap-8 text-zinc-300">
                     <a href="#" className="hover:text-amber-500 transition-colors">LinkedIn</a>
                     <a href="#" className="hover:text-amber-500 transition-colors">Twitter</a>
                     <a href="#" className="hover:text-amber-500 transition-colors">Instagram</a>
