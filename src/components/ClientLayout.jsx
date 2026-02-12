@@ -25,12 +25,8 @@ export default function ClientLayout({ children }) {
     if (hasShown) {
          setLoading(false);
     } else {
-        // Wait for animation to finish (controlled by onFinish in SplashScreen now)
-        // or just a fallback timeout
-        setTimeout(() => {
-            setLoading(false);
-             sessionStorage.setItem("splashShown", "true");
-        }, 3000); 
+        // Wait for animation to finish
+        // setLoading(false);
     }
   }, []);
 
